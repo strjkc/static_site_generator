@@ -89,8 +89,11 @@ def markdown_to_html_node(markdown:str):
             text_nodes = [text_to_textnodes(line) for line in striped_lines]
             leafs = []
             for nodes in text_nodes:
+                html_nodes= []
                 for node in nodes:
-                    leafs.append(ParentNode("li",[text_node_to_html_node(node)]))
+                    html_node = text_node_to_html_node(node)
+                    html_nodes.append(html_node)
+                leafs.append(ParentNode("li",html_nodes))
             parent_node = ParentNode("ul", leafs)
             nodes_from_markdown.append(parent_node)
         elif block_type == BlockType.O_LIST:
@@ -98,8 +101,11 @@ def markdown_to_html_node(markdown:str):
             text_nodes = [text_to_textnodes(strip_block_markdown(line)) for line in lines]
             leafs = []
             for nodes in text_nodes:
+                html_nodes = []
                 for node in nodes:
-                    leafs.append(ParentNode("li",[text_node_to_html_node(node)]))
+                    html_node =  text_node_to_html_node(node)
+                    html_nodes.append(html_node)
+                leafs.append(ParentNode("li",html_nodes))
             parent_node = ParentNode("ol", leafs)
             nodes_from_markdown.append(parent_node)
     return ParentNode("div", nodes_from_markdown)
