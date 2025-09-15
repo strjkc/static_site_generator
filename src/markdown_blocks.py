@@ -108,7 +108,7 @@ def extract_title(markdown:str):
     header = re.findall("^# .*", markdown)[0]
     return header[2:]
 
-def generate_page(from_path, template_path, dest_path):
+def generate_page(from_path, template_path, dest_path, basepath):
     print(f"Generating page from {from_path} to {dest_path} using {template_path}")
     with open(from_path, "r") as md_file:
         md = md_file.read()
@@ -119,6 +119,8 @@ def generate_page(from_path, template_path, dest_path):
             title = extract_title(md)
             tp = tp.replace("{{ Title }}", title)
             tp = tp.replace("{{ Content }}", html)
+            tp = tp.replace("href=\"/", f"href\"{basepath}")
+            tp = tp.replace("src=\"/", f"src\"{basepath}")
             if not os.path.exists(dest_path):
                 os.mkdir(dest_path)
             with open(f"{dest_path}/index.html", "w") as out:
