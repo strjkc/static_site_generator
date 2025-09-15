@@ -119,8 +119,8 @@ def generate_page(from_path, template_path, dest_path, basepath):
             title = extract_title(md)
             tp = tp.replace("{{ Title }}", title)
             tp = tp.replace("{{ Content }}", html)
-            tp = tp.replace("href=\"/", f"href\"{basepath}")
-            tp = tp.replace("src=\"/", f"src\"{basepath}")
+            tp = tp.replace("href=\"/", f"href=\"{basepath}")
+            tp = tp.replace("src=\"/", f"src=\"{basepath}")
             if not os.path.exists(dest_path):
                 os.mkdir(dest_path)
             with open(f"{dest_path}/index.html", "w") as out:

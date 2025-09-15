@@ -8,8 +8,6 @@ Here's the deal, **I like Tolkien**.
 >
 > -- J.R.R. Tolkien
 
-## POzdrav Cao cao Djina
-
 ## Blog posts
 
 - [Why Glorfindel is More Impressive than Legolas](/blog/glorfindel)
@@ -23,10 +21,6 @@ Here's the deal, **I like Tolkien**.
 - Disney _didn't ruin it_ (okay, but Amazon might have)
 - It created an entirely new genre of fantasy
 
-### Neka nova lista
-
-- Prva stvar
-- Druga
 
 ## My favorite characters (in order)
 

@@ -40,11 +40,12 @@ def main():
 
     root_dir = os.getcwd()
     from_dir = os.path.abspath(f"{root_dir}/static/")
-    to_dir = os.path.abspath(f"{root_dir}/static/docs/")
+    to_dir = os.path.abspath(f"{root_dir}/docs/")
     if os.path.exists(to_dir):
         shutil.rmtree(to_dir)
     copy_stuff(from_dir, to_dir)
     generate_pages(f"{root_dir}/content/", f"{root_dir}/docs/", f"{root_dir}/template.html", basepath)
+    print("s")
 
 if __name__ == "__main__":
     main()
